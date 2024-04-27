@@ -53,7 +53,7 @@ jobs:
 
       - name: "use helm to install our charts"
         run:
-          helm upgrade --install bik bik -f bik/values.yaml --set image.tag=${{ env.APP_VERSION}}
+          helm upgrade --install bik bik -f bik/values.yaml --set image.tag={{ env.APP_VERSION}}
 
 
       # - name: "Announce the latest version of the deployment"
