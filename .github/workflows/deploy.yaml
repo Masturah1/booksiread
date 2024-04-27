@@ -47,6 +47,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
 
+      - name: "Install Helm"
+        uses: azure/setup-helm@v4.2.0
+        id: "install-helm"
+
 
       # - name: "Announce the latest version of the deployment"
       #   uses: dawidd6/action-send-mail@v3
