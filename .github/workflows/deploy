@@ -5,6 +5,7 @@ on:
         - tests
 
 jobs: 
+  if:${{ github.ref_name == 'tests'}}
   testdeployment:
     runs-on: ubuntu-latest
     steps: 
