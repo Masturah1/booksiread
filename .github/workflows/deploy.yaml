@@ -21,7 +21,8 @@ jobs:
       
       - name: "Build a Docker image from the repo v1"
         run:  | 
-          docker build -t theoafactor/simplewebapp:${{ env.APP VERSION }} frontend/
+          docker build -t masturrh/simplewebapp:${{ env.APP_VERSION }} frontend/
+
 
       - name: "Log into Docker Hub"
         uses: docker/login-action@v3
@@ -31,12 +32,12 @@ jobs:
 
       - name: "Push to Docker Hub"
         run: |
-          docker push theoafactor/simplewebapp:${{ env.APP VERSION}}
+          docker push masturrh/simplewebapp:${{ env.APP_VERSION}}
     
       - name: "Install kubectl"
         uses:  azure/setup-kubectl@v3
         with:
-          Version: "v1.19.3"
+          version: "v1.19.3"
         id: "install-kubectl"
 
       - name: "Setup AWS Credentials"
