@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: '{{ .Values.CanaryReplicaCount }}'
+  replicas: {{ .Values.CanaryReplicaCount }}
   selector:
     matchLabels:
       app: frontend
